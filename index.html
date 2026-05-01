@@ -74,12 +74,12 @@ const SECTOR_MAP={
   FoodSecurity:'Продовольственная безопасность',
   Health:'Здравоохранение',
   OverarchingProtection:'Защита',
-  Shelter:'Жильё и предметы первой необходимости',
+  Shelter:'Жилье и непродовольственные товары',
   WASH:'Вода, санитария и гигиена',
   CP:'Защита детей',
   GBV:'Гендерно обусловленное насилие',
   MineAction:'Противоминная деятельность',
-  HLP:'Жильё, земля и имущество'
+  HLP:'Жилье, земля и имущество'
 };
 function parseCSV(text){
   const rows=[]; let row=[], cell='', q=false;
@@ -222,7 +222,7 @@ const LABEL_OFFSETS={
 function fmt(n){return new Intl.NumberFormat('ru-RU').format(Math.round(n||0));}
 function pct(n){return Math.round(n||0)+'%';}
 function shortNum(n){n=Number(n||0); if(n>=1000000) return (n/1000000).toFixed(2).replace('.',',')+' млн'; if(n>=1000) return fmt(n/1000)+' тыс.'; return fmt(n);}
-function severityText(s){if(!s)return 'нет данных'; if(s<1.5)return 'минимальный'; if(s<2.5)return 'стрессовый'; if(s<3.5)return 'тяжёлый'; if(s<4.5)return 'экстремальный'; return 'катастрофический';}
+function severityText(s){if(!s)return 'нет данных'; if(s<1.5)return 'минимальный'; if(s<2.5)return 'стрессовый'; if(s<3.5)return 'тяжелый'; if(s<4.5)return 'экстремальный'; return 'катастрофический';}
 function severityInt(s){
   if(!s) return '—';
 
